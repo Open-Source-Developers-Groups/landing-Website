@@ -1,15 +1,18 @@
 {
-  "name": "donations",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "next": "9.5.2",
-    "react": "16.13.1",
-    "react-dom": "16.13.1"
-  }
+	"name": "donations",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "yarn build:css && next dev",
+		"build": "yarn build:css && next build",
+		"start": "yarn build:css && next start",
+		"build:css": "npx tailwindcss build assets/css/index.css -o assets/css/output.css"
+	},
+	"dependencies": {
+		"gsap": "^3.5.0",
+		"next": "9.5.2",
+		"react": "16.13.1",
+		"react-dom": "16.13.1",
+		"tailwindcss": "^1.7.2"
+	}
 }
