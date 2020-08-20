@@ -1,4 +1,5 @@
 .__full {
 	background-color: #74ebd5;
 	background-image: linear-gradient(90deg, #74ebd5 0%, #2f4ee3 100%);
+	background-attachment: fixed;
 }

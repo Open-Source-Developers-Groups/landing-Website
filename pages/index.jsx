@@ -1,5 +1,8 @@
 import React, { useEffect } from "react";
-import { TimelineLite, Power2 } from "gsap";
+import gsap, { TimelineLite, Power2 } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
 	const tl = new TimelineLite();
@@ -38,8 +41,32 @@ export default function Home() {
 			);
 	};
 
+	const scrollAnimation = () => {
+		tl.to("#view", 0.7, {
+			scale: 1,
+			ease: Power2.easeIn,
+			scrollTrigger: {
+				trigger: "#laptop",
+				scrub: true,
+			},
+			reversed: true,
+		});
+		tl.to("#wallet", {
+			ease: "none",
+			duration: 4,
+			rotation: 360,
+			// y: 500,
+			scrollTrigger: {
+				trigger: "#wallet-pin",
+				scrub: true,
+				pin: true,
+			},
+		});
+	};
+
 	useEffect(() => {
 		mountedPage();
+		scrollAnimation();
 	}, []);
 
 	return (
@@ -75,22 +102,52 @@ export default function Home() {
 				</div>
 			</div>
 
-			<section className="__full">
+			<section className="__full" id="view-container">
 				<div className="min-h-screen container mx-auto flex items-center ">
 					<div>
-						<img src={"/view.png"} alt="laptop" className="inline" />
+						<img
+							src={"/view.png"}
+							alt="laptop"
+							className="inline"
+							id="view"
+							style={{ transform: " scale(0.3)" }}
+						/>
 					</div>
 					<div>
-						<h2 className="text-5xl font-bold">
+						<h2 className="text-5xl font-bold text-white">
 							Get full Donations <br /> from anywhere in the world
 						</h2>
-						<h3 className="mt-3">
+						<h3 className="mt-3 text-white">
 							Cash, Store cryptocurrencies, Cheque, Debit Card we got you
 							covered
 						</h3>
 					</div>
 				</div>
 			</section>
+
+			<section>
+				<div
+					className="min-h-screen container mx-auto flex items-center"
+					id="wallet-pin"
+				>
+					<div className="w-1/2">
+						<h1 className="text-5xl font-bold ">
+							Take community funding to the Next level
+						</h1>
+						Our network and expertise are always at your disposal.
+					</div>
+					<div className="w-1/2">
+						<img
+							src={"/145.jpg"}
+							alt="laptop"
+							className="inline shadow"
+							id="wallet"
+						/>
+					</div>
+				</div>
+			</section>
+
+			<section className="h-screen bg-black"></section>
 		</>
 	);
 }
