@@ -41,32 +41,8 @@ export default function Home() {
 			);
 	};
 
-	const scrollAnimation = () => {
-		tl.to("#view", 0.7, {
-			scale: 1,
-			ease: Power2.easeIn,
-			scrollTrigger: {
-				trigger: "#laptop",
-				scrub: true,
-			},
-			reversed: true,
-		});
-		tl.to("#wallet", {
-			ease: "none",
-			duration: 4,
-			rotation: 360,
-			// y: 500,
-			scrollTrigger: {
-				trigger: "#wallet-pin",
-				scrub: true,
-				pin: true,
-			},
-		});
-	};
-
 	useEffect(() => {
 		mountedPage();
-		scrollAnimation();
 	}, []);
 
 	return (
@@ -102,47 +78,52 @@ export default function Home() {
 				</div>
 			</div>
 
-			<section className="__full" id="view-container">
-				<div className="min-h-screen container mx-auto flex items-center ">
-					<div>
-						<img
-							src={"/view.png"}
-							alt="laptop"
-							className="inline"
-							id="view"
-							style={{ transform: " scale(0.3)" }}
-						/>
-					</div>
-					<div>
-						<h2 className="text-5xl font-bold text-white">
-							Get full Donations <br /> from anywhere in the world
-						</h2>
-						<h3 className="mt-3 text-white">
-							Cash, Store cryptocurrencies, Cheque, Debit Card we got you
-							covered
-						</h3>
+			<section className="__doing_good py-20">
+				<div className="flex container mx-auto">
+					<div className="w-1/2"></div>
+					<div className="w-1/2">
+						<h1 className="text-4xl font-bold">
+							Are you a charity making impact? Get verified to receive any legal
+							tender from any country
+						</h1>
+						<div className="text-xl font-bold mt-4">
+							You don't have to do it alone! or have limitations Connect with
+							donors and volunteers looking for credible charities
+						</div>
+						<button className="px-8 py-4 bg-blue-600 mt-4 text-white rounded-full text-xl">
+							Get subscriptions
+						</button>
 					</div>
 				</div>
 			</section>
 
 			<section>
 				<div
-					className="min-h-screen container mx-auto flex items-center"
+					className="min-h-screen container mx-auto items-center py-20"
 					id="wallet-pin"
 				>
-					<div className="w-1/2">
-						<h1 className="text-5xl font-bold ">
+					<div className="text-center relative">
+						<h2 className="absolute text-6xl text-blue-600 font-bold text-opacity-25 w-full text-center mt-20">
+							CAMPAIGN * GIVE * RECIEVE *
+						</h2>
+						<h1 className="text-3xl font-bold ">
 							Take community funding to the Next level
 						</h1>
 						Our network and expertise are always at your disposal.
 					</div>
-					<div className="w-1/2">
-						<img
-							src={"/145.jpg"}
-							alt="laptop"
-							className="inline shadow"
-							id="wallet"
-						/>
+					<div className="flex flex-wrap -mx-10  mt-20">
+						<div className="flex-1 shadow-lg m-10">
+							<h1>Sign Up</h1>
+						</div>
+						<div className="flex-1 shadow-lg m-10">
+							<h1>Sign Up</h1>
+						</div>
+						<div className="flex-1 shadow-lg m-10">
+							<h1>Sign Up</h1>
+						</div>
+						<div className="flex-1 shadow-lg m-10">
+							<h1>Sign Up</h1>
+						</div>
 					</div>
 				</div>
 			</section>

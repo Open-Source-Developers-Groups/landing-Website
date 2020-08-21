@@ -3,7 +3,7 @@ import React from "react";
 export default function Nav() {
 	const links = ["About", "FAQ", "Organizations", "Log In"];
 	return (
-		<div className="fixed w-full">
+		<div className="fixed w-full bg-white bg-opacity-75 shadow">
 			<div className="container mx-auto flex justify-between items-center py-3">
 				<div className="brandname text-bold font-xl">DONATION</div>
 				<ul className="flex items-center">
