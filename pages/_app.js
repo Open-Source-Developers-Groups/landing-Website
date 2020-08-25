@@ -2,6 +2,7 @@
 import Nav from "../components/navbar";
 import "../assets/css/output.css";
 import "../assets/css/custom.css";
+import "react-multi-carousel/lib/styles.css";
 
 function MyApp({ Component, pageProps }) {
 	return (

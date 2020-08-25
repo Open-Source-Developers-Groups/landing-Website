@@ -3,9 +3,10 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"dev": "yarn build:css && next dev",
-		"build": "yarn build:css && next build",
-		"start": "yarn build:css && next start",
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"export": "npm run build && next export",
 		"build:css": "npx tailwindcss build assets/css/index.css -o assets/css/output.css"
 	},
 	"dependencies": {
@@ -13,6 +14,7 @@
 		"next": "9.5.2",
 		"react": "16.13.1",
 		"react-dom": "16.13.1",
+		"react-multi-carousel": "^2.5.5",
 		"tailwindcss": "^1.7.2"
 	}
 }
